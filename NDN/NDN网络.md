@@ -14,7 +14,7 @@ IP最初的设计是为了在两个终端间进行通信。互联网通信逐渐
 
 NDN网络结构继承了IP网络的分层细腰状结构，使用数据检索模型代替了IP网络中的端到端数据传送。在协议栈中新增了安全层和策略层，同时IP网络中的传输层的功能全面嵌入到NDN转发层面中。
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806113231829.png" alt="image-20210806113231829" style="zoom:50%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495182-b899f01c-6e7b-48c7-b1e3-1c37e81aed89.png)
 
 ## NDN通信
 
@@ -23,7 +23,7 @@ NDN网络结构继承了IP网络的分层细腰状结构，使用数据检索模
 1. 用于获取全局数据的名称必须是全局唯一的。
 2. 搜索应用程序会依据CN生成请求。
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806102808210.png" alt="image-20210806102808210" style="zoom:50%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495235-0817c6bf-2def-4061-bc65-35312f87560a.png)
 
 
 
@@ -35,7 +35,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 ##### 兴趣包
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806120454848.png" alt="image-20210806120454848" style="zoom: 67%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495286-15352552-c008-4b21-bb1f-a84eddae73ae.png)
 
 - 兴趣包的名字作用相当于IP包中的目的地址。
 - 用于返回请求数据的兴趣包不携带请求消费者的身份（地址或名字）。
@@ -44,7 +44,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 ##### 数据包
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806120926728.png" alt="image-20210806120926728" style="zoom: 67%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495299-7078a076-cf9b-4b34-9c8e-ad35e4f831a5.png)
 
 ​	每一个数据包都是
 
@@ -57,7 +57,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 每个NDN路由器都保持3个主要的数据结构：FIB、PIT、CS。
 
-![image-20210806152907473](C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806152907473.png)
+![image](https://user-images.githubusercontent.com/49645739/128495348-9402543f-bf5b-48d2-a058-e8918b0a7630.png)
 
 - **Content Store**
 
