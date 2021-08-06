@@ -13,8 +13,7 @@ IP最初的设计是为了在两个终端间进行通信。互联网通信逐渐
 ### NDN网络结构
 
 NDN网络结构继承了IP网络的分层细腰状结构，使用数据检索模型代替了IP网络中的端到端数据传送。在协议栈中新增了安全层和策略层，同时IP网络中的传输层的功能全面嵌入到NDN转发层面中。
-
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806113231829.png" alt="image-20210806113231829" style="zoom:50%;" />
+![image](https://user-images.githubusercontent.com/49645739/128478221-23e23385-8ffa-4eec-b9ca-c2e277a33205.png)
 
 ## NDN通信
 
