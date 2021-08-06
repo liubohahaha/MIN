@@ -14,7 +14,7 @@ IP最初的设计是为了在两个终端间进行通信。互联网通信逐渐
 
 NDN网络结构继承了IP网络的分层细腰状结构，使用数据检索模型代替了IP网络中的端到端数据传送。在协议栈中新增了安全层和策略层，同时IP网络中的传输层的功能全面嵌入到NDN转发层面中。
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806113231829.png" alt="image-20210806113231829" style="zoom:50%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495615-92efb9d9-f83e-4b57-b624-60b70a455dc2.png)
 
 ## NDN通信
 
@@ -23,7 +23,7 @@ NDN网络结构继承了IP网络的分层细腰状结构，使用数据检索模
 1. 用于获取全局数据的名称必须是全局唯一的。
 2. 搜索应用程序会依据CN生成请求。
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806102808210.png" alt="image-20210806102808210" style="zoom:50%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495652-f22c6115-48d4-4700-9e1e-15e6a3503fbe.png)
 
 
 
@@ -35,7 +35,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 ##### 兴趣包
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806120454848.png" alt="image-20210806120454848" style="zoom: 67%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495682-5f98e0f4-9c03-4c15-b3b8-f2601e12db86.png)
 
 - 兴趣包的名字作用相当于IP包中的目的地址。
 - 用于返回请求数据的兴趣包不携带请求消费者的身份（地址或名字）。
@@ -44,7 +44,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 ##### 数据包
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806120926728.png" alt="image-20210806120926728" style="zoom: 67%;" />
+![image](https://user-images.githubusercontent.com/49645739/128495705-86352bb7-6c70-4bf4-8894-e38319f82482.png)
 
 ​	每一个数据包都是
 
@@ -57,7 +57,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 每个NDN路由器都保持3个主要的数据结构：FIB、PIT、CS。
 
-![image-20210806152907473](C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806152907473.png)
+![image](https://user-images.githubusercontent.com/49645739/128495732-f152d215-1d59-4bee-8f2d-d491fa84d3f9.png)
 
 - **Content Store**
 
@@ -78,13 +78,11 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
   1. IP 中的FIB只有一个最佳的下一跳，NDN中FIB有一个存放多个接口且按一定顺序排序的接口列表。
   2. IP中FIB只有下一跳的信息，而NDN中FIB存放来自路由和转发层面的信息，用于支持自适应转发决策。
 
+  ![image](https://user-images.githubusercontent.com/49645739/128495778-f1a3d830-094f-4ee3-be04-e5b170134e04.png)
   
-
-  <img src="C:%5CUsers%5C%E5%88%98%E5%8D%9A%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210806164141114.png" alt="image-20210806164141114" style="zoom:80%;" />
-
 #### 转发过程
 
-<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806150221236.png" alt="image-20210806150221236"  />
+![image](https://user-images.githubusercontent.com/49645739/128495830-45a03a4d-a44d-4b3f-9d50-a2187d9897ab.png)
 
 ##### 向上转发兴趣包
 
@@ -94,7 +92,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 3. 如果在PIT中没有匹配到，则在FIB中进行最长前缀匹配（LPM)。如果匹配到了一条FIB条目，则兴趣包会被转发到相关的下一跳（可能多个）并创建一条新的PIT条目，将该兴趣包的传入接口添加到其中。
 
-   <img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806152645318.png" alt="image-20210806152645318" style="zoom:67%;" />
+   ![image](https://user-images.githubusercontent.com/49645739/128495865-01091096-ca4c-45b3-a3ff-beb4747d10cc.png)
 
 4. 否则，当不满足以上所有要求时，由路由器转发政策决定要么将兴趣包洪发给所有的传出接口，要么删除该兴趣包。
 
@@ -114,11 +112,4 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 
 ## NLSR: 命名数据链路状态路由协议
 
-**Forwarding Information Base**
 
-FIB维持下一跳和其他可到达的每一个目的地名字前缀。FIB由路由协议填充，用于向上游转发兴趣包。
-
-与IP的FIB有两点不同：
-
-1. IP 中的FIB只有一个最佳的下一跳，NDN中FIB有一个存放多个接口且按一定顺序排序的接口列表。
-2. IP中FIB只有下一跳的信息，而NDN中FIB存放来自路由和转发层面的信息，用于支持自适应转发决策。
