@@ -84,8 +84,7 @@ NDN通信是由消费者以兴趣包的形式发起的。当兴趣包到达内�
 2. 如果在PIT的条目中匹配到，兴趣包传入的接口将被添加到被看作兴趣包聚合（Interest aggregation）的接口列表。因此当相关数据包到来后，所有数据请求者都会收到这个数据包的副本。
 
 3. 如果在PIT中没有匹配到，则在FIB中进行最长前缀匹配（LPM)。如果匹配到了一条FIB条目，则兴趣包会被转发到相关的下一跳（可能多个）并创建一条新的PIT条目，将该兴趣包的传入接口添加到其中。
-
-   <img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806152645318.png" alt="image-20210806152645318" style="zoom:67%;" />
+<img src="C:\Users\刘博\AppData\Roaming\Typora\typora-user-images\image-20210806152645318.png" alt="image-20210806152645318" style="zoom:67%;" />
 
 4. 否则，当不满足以上所有要求时，由路由器转发政策决定要么将兴趣包洪发给所有的传出接口，要么删除该兴趣包。
 
