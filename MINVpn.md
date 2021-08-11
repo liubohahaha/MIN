@@ -9,3 +9,9 @@ SOCKS是一种网络传输协议，主要用于客户端与外网服务器之间
 ### 工作过程
 
 <img src="https://pic1.zhimg.com/v2-5fca0d6c2fce1fae7da7ab9669bf3cf8_b.jpg" alt="img" style="zoom:80%;" />
+
+
+
+## sysproxy
+设置系统代理，参数为pac...运行后改变如下的参数。
+![微信图片_20210811172225](https://user-images.githubusercontent.com/49645739/129004343-c01de24e-ab63-402c-99d7-9010e1dfeaa8.png)
