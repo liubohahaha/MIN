@@ -15,6 +15,6 @@ SOCKS是一种网络传输协议，主要用于客户端与外网服务器之间
 ## sysproxy
 通过InternetSetOption()来改变LAN的代理信息，从而设置系统代理。
 
-参数为pac...运行后改变如下的参数。
+当参数为pac url时，运行后改变如下的参数。
 
 ![微信图片_20210811172225](https://user-images.githubusercontent.com/49645739/129004901-eaddd1d1-7b63-4943-bee7-a5cd39e5539b.png)
