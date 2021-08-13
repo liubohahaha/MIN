@@ -11,6 +11,11 @@ SOCKS是一种网络传输协议，主要用于客户端与外网服务器之间
 <img src="https://pic1.zhimg.com/v2-5fca0d6c2fce1fae7da7ab9669bf3cf8_b.jpg" alt="img" style="zoom:80%;" />
 
 
+## TUN
+
+TUN 设备是一种虚拟网络设备，通过此设备，程序可以方便地模拟网络行为。TUN 模拟的是一个三层设备，也就是说，通过它可以处理来自网络层的数据；更通俗一点的说，通过它，我们可以处理 IP 数据包。
+
+
 
 ## sysproxy
 通过InternetSetOption()来改变LAN的代理信息，从而设置系统代理。
